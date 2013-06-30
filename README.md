@@ -6,4 +6,4 @@ You can log in to Feedbin and Feedbin Notifier will securely store your password
 
 # Installation
 
-You can build Feedbin Notifier with Xcode 4.6.3 on OS X 10.8.
+You can build Feedbin Notifier with Xcode 4.6.3 on OS X 10.8. A code-signed binary is also available [here](http://cl.ly/PyUr).
