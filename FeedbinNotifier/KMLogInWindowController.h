@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface KMPreferencesWindowController : NSWindowController
+@interface KMLogInWindowController : NSWindowController
+
+- (void)showWindowWithCompletionHandler:(void (^)(NSURLCredential *credential))completionHandler;
 
 @end
