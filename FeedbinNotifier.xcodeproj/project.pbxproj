@@ -11,6 +11,7 @@
 		1859104C1780816B00A974FA /* KMLogInWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1859104A1780816B00A974FA /* KMLogInWindowController.xib */; };
 		1859104F1780888C00A974FA /* KMFeedbinClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859104E1780888C00A974FA /* KMFeedbinClient.m */; };
 		185910521780A45E00A974FA /* KMFeedbinCredentialStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 185910511780A45E00A974FA /* KMFeedbinCredentialStorage.m */; };
+		185910591780AFD700A974FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185910571780AFB700A974FA /* Security.framework */; };
 		188477B31780581900FAA58D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188477B21780581900FAA58D /* Cocoa.framework */; };
 		188477BD1780581900FAA58D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188477BB1780581900FAA58D /* InfoPlist.strings */; };
 		188477BF1780581900FAA58D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477BE1780581900FAA58D /* main.m */; };
@@ -28,6 +29,7 @@
 		1859104E1780888C00A974FA /* KMFeedbinClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMFeedbinClient.m; sourceTree = "<group>"; };
 		185910501780A45E00A974FA /* KMFeedbinCredentialStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFeedbinCredentialStorage.h; sourceTree = "<group>"; };
 		185910511780A45E00A974FA /* KMFeedbinCredentialStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMFeedbinCredentialStorage.m; sourceTree = "<group>"; };
+		185910571780AFB700A974FA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		188477AF1780581900FAA58D /* FeedbinNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedbinNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188477B21780581900FAA58D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		188477B51780581900FAA58D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185910591780AFD700A974FA /* Security.framework in Frameworks */,
 				188477B31780581900FAA58D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +79,7 @@
 		188477B11780581900FAA58D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				185910571780AFB700A974FA /* Security.framework */,
 				188477B21780581900FAA58D /* Cocoa.framework */,
 				188477B41780581900FAA58D /* Other Frameworks */,
 			);
