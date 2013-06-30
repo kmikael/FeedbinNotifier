@@ -4,7 +4,7 @@ Feedbin Notifier is a menu bar application that shows your Feedbin unread count.
 
 You can log in to Feedbin and Feedbin Notifier will securely store your password in the seystem keychain. After then you can then log out at any time.
 
-![](http://f.cl.ly/items/062h383S0R1v2j451K0l/Feedbin%20Notifier%20Screenshot.jpg)
+![](http://f.cl.ly/items/3g2Q3Z3w361q3q2v0j2h/feedbin-notifier-screenshot.jpg)
 
 # Installation
 
