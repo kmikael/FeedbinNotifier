@@ -10,10 +10,10 @@
 
 @interface KMFeedbinCredentialStorage : NSObject
 
++ (KMFeedbinCredentialStorage *)sharedCredentialStorage;
+
 - (NSURLCredential *)credential;
 - (void)setCredential:(NSURLCredential *)credential;
 - (void)removeCredential;
-
-+ (KMFeedbinCredentialStorage *)sharedCredentialStorage;
 
 @end

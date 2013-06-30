@@ -27,8 +27,8 @@
 
 - (void)getUnreadEntriesWithCompletionHandler:(void (^)(NSArray *, NSError *))completionHandler
 {
-    NSString *user = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)(self.credential.user), NULL, (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ", kCFStringEncodingUTF8));
-    NSString *password = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)(self.credential.password), NULL, (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ", kCFStringEncodingUTF8));
+    NSString *user = [self URLEncodedString:self.credential.user];
+    NSString *password = [self URLEncodedString:self.credential.password];
     NSString *string = [NSString stringWithFormat:@"https://%@:%@@api.feedbin.me/v2/unread_entries.json", user, password];
     NSURL *URL = [NSURL URLWithString:string];
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:URL]
@@ -42,6 +42,14 @@
             NSLog(@"Error: %@", [error localizedDescription]);
         }
     }];
+}
+
+#pragma mark - Helper methods
+
+- (NSString *)URLEncodedString:(NSString *)string
+{
+    CFStringRef l = CFSTR("!*'\"();:@&=+$,/?%#[]% ");
+    return CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)string, NULL, l, kCFStringEncodingUTF8));
 }
 
 @end
