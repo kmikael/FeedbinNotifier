@@ -31,7 +31,8 @@
 {
     _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     _statusItem.title = @"";
-    _statusItem.image = [NSImage imageNamed:@"Feedbin"];
+    _statusItem.image = [NSImage imageNamed:@"feedbin-logo"];
+    _statusItem.alternateImage = [NSImage imageNamed:@"feedbin-logo-alt"];
     _statusItem.highlightMode = YES;
     [self setupMenu];
 }
