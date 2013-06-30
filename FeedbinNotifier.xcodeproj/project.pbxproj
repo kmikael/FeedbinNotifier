@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1859104B1780816B00A974FA /* KMPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185910491780816B00A974FA /* KMPreferencesWindowController.m */; };
+		1859104C1780816B00A974FA /* KMPreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1859104A1780816B00A974FA /* KMPreferencesWindowController.xib */; };
 		188477B31780581900FAA58D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188477B21780581900FAA58D /* Cocoa.framework */; };
 		188477BD1780581900FAA58D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188477BB1780581900FAA58D /* InfoPlist.strings */; };
 		188477BF1780581900FAA58D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477BE1780581900FAA58D /* main.m */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		185910481780816B00A974FA /* KMPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPreferencesWindowController.h; sourceTree = "<group>"; };
+		185910491780816B00A974FA /* KMPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPreferencesWindowController.m; sourceTree = "<group>"; };
+		1859104A1780816B00A974FA /* KMPreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMPreferencesWindowController.xib; sourceTree = "<group>"; };
 		188477AF1780581900FAA58D /* FeedbinNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedbinNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188477B21780581900FAA58D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		188477B51780581900FAA58D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -87,6 +92,9 @@
 				188477C41780581900FAA58D /* KMAppDelegate.h */,
 				188477C51780581900FAA58D /* KMAppDelegate.m */,
 				188477C71780581900FAA58D /* MainMenu.xib */,
+				185910481780816B00A974FA /* KMPreferencesWindowController.h */,
+				185910491780816B00A974FA /* KMPreferencesWindowController.m */,
+				1859104A1780816B00A974FA /* KMPreferencesWindowController.xib */,
 				188477B91780581900FAA58D /* Supporting Files */,
 			);
 			path = FeedbinNotifier;
@@ -161,6 +169,7 @@
 				188477C31780581900FAA58D /* Credits.rtf in Resources */,
 				188477C91780581900FAA58D /* MainMenu.xib in Resources */,
 				188477D017805E8000FAA58D /* icon.png in Resources */,
+				1859104C1780816B00A974FA /* KMPreferencesWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +182,7 @@
 			files = (
 				188477BF1780581900FAA58D /* main.m in Sources */,
 				188477C61780581900FAA58D /* KMAppDelegate.m in Sources */,
+				1859104B1780816B00A974FA /* KMPreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

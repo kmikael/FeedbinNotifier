@@ -7,6 +7,13 @@
 //
 
 #import "KMAppDelegate.h"
+#import "KMPreferencesWindowController.h"
+
+@interface KMAppDelegate ()
+
+@property (strong, nonatomic) KMPreferencesWindowController *preferencesWindowController;
+
+@end
 
 @implementation KMAppDelegate
 
@@ -18,6 +25,7 @@
     _statusItem.highlightMode = YES;
     _statusItem.menu = [[NSMenu alloc] init];
     [_statusItem.menu addItemWithTitle:@"Open Feedbin" action:@selector(openFeedbin:) keyEquivalent:@""];
+    [_statusItem.menu addItemWithTitle:@"Log In..." action:@selector(logIn:) keyEquivalent:@""];
     [_statusItem.menu addItem:[NSMenuItem separatorItem]];
     [_statusItem.menu addItemWithTitle:@"Quit Feedbin Notifier" action:@selector(terminate:) keyEquivalent:@""];
 }
@@ -28,6 +36,15 @@
 {
     NSURL *URL = [NSURL URLWithString:@"https://feedbin.me"];
     [[NSWorkspace sharedWorkspace] openURL:URL];
+}
+
+- (void)logIn:(id)sender
+{
+    if (!_preferencesWindowController) {
+        _preferencesWindowController = [[KMPreferencesWindowController alloc] init];
+    }
+    [self.preferencesWindowController showWindow:self.statusItem.menu];
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
 - (void)terminate:(id)sender
