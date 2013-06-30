@@ -13,6 +13,7 @@
 		188477C31780581900FAA58D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 188477C11780581900FAA58D /* Credits.rtf */; };
 		188477C61780581900FAA58D /* KMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477C51780581900FAA58D /* KMAppDelegate.m */; };
 		188477C91780581900FAA58D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188477C71780581900FAA58D /* MainMenu.xib */; };
+		188477D017805E8000FAA58D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 188477CF17805E8000FAA58D /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		188477C41780581900FAA58D /* KMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMAppDelegate.h; sourceTree = "<group>"; };
 		188477C51780581900FAA58D /* KMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMAppDelegate.m; sourceTree = "<group>"; };
 		188477C81780581900FAA58D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		188477CF17805E8000FAA58D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				188477BE1780581900FAA58D /* main.m */,
 				188477C01780581900FAA58D /* FeedbinNotifier-Prefix.pch */,
 				188477C11780581900FAA58D /* Credits.rtf */,
+				188477CF17805E8000FAA58D /* icon.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				188477BD1780581900FAA58D /* InfoPlist.strings in Resources */,
 				188477C31780581900FAA58D /* Credits.rtf in Resources */,
 				188477C91780581900FAA58D /* MainMenu.xib in Resources */,
+				188477D017805E8000FAA58D /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +308,7 @@
 				188477CE1780581900FAA58D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
