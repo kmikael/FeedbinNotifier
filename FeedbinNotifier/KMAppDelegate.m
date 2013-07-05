@@ -22,9 +22,13 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"KMFeedbinRefreshInterval": @120}];
+    
     [self setupStatusItem];
     [self getUnreadEntries:nil];
-    [NSTimer scheduledTimerWithTimeInterval:120.0 target:self selector:@selector(getUnreadEntries:) userInfo:nil repeats:YES];
+    
+    NSTimeInterval ti = [[NSUserDefaults standardUserDefaults] doubleForKey:@"KMFeedbinRefreshInterval"];
+    [NSTimer scheduledTimerWithTimeInterval:ti target:self selector:@selector(getUnreadEntries:) userInfo:nil repeats:YES];
 }
 
 - (void)setupStatusItem
