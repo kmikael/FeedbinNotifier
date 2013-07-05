@@ -14,9 +14,7 @@
 		185910521780A45E00A974FA /* KMFeedbinCredentialStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 185910511780A45E00A974FA /* KMFeedbinCredentialStorage.m */; };
 		185910591780AFD700A974FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185910571780AFB700A974FA /* Security.framework */; };
 		188477B31780581900FAA58D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188477B21780581900FAA58D /* Cocoa.framework */; };
-		188477BD1780581900FAA58D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188477BB1780581900FAA58D /* InfoPlist.strings */; };
 		188477BF1780581900FAA58D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477BE1780581900FAA58D /* main.m */; };
-		188477C31780581900FAA58D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 188477C11780581900FAA58D /* Credits.rtf */; };
 		188477C61780581900FAA58D /* KMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477C51780581900FAA58D /* KMAppDelegate.m */; };
 		188477C91780581900FAA58D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188477C71780581900FAA58D /* MainMenu.xib */; };
 		189358311780E67E00337E8B /* feedbin-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893582F1780E67E00337E8B /* feedbin-logo.png */; };
@@ -41,10 +39,8 @@
 		188477B61780581900FAA58D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		188477B71780581900FAA58D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		188477BA1780581900FAA58D /* FeedbinNotifier-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeedbinNotifier-Info.plist"; sourceTree = "<group>"; };
-		188477BC1780581900FAA58D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		188477BE1780581900FAA58D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		188477C01780581900FAA58D /* FeedbinNotifier-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FeedbinNotifier-Prefix.pch"; sourceTree = "<group>"; };
-		188477C21780581900FAA58D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		188477C41780581900FAA58D /* KMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMAppDelegate.h; sourceTree = "<group>"; };
 		188477C51780581900FAA58D /* KMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMAppDelegate.m; sourceTree = "<group>"; };
 		188477C81780581900FAA58D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -125,11 +121,9 @@
 		188477B91780581900FAA58D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				188477BA1780581900FAA58D /* FeedbinNotifier-Info.plist */,
-				188477BB1780581900FAA58D /* InfoPlist.strings */,
 				188477BE1780581900FAA58D /* main.m */,
 				188477C01780581900FAA58D /* FeedbinNotifier-Prefix.pch */,
-				188477C11780581900FAA58D /* Credits.rtf */,
+				188477BA1780581900FAA58D /* FeedbinNotifier-Info.plist */,
 				184E96661780C78E00EF30C9 /* Feedbin.iconset */,
 				1893582F1780E67E00337E8B /* feedbin-logo.png */,
 				189358301780E67E00337E8B /* feedbin-logo@2x.png */,
@@ -191,8 +185,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188477BD1780581900FAA58D /* InfoPlist.strings in Resources */,
-				188477C31780581900FAA58D /* Credits.rtf in Resources */,
 				188477C91780581900FAA58D /* MainMenu.xib in Resources */,
 				1859104C1780816B00A974FA /* KMLogInWindowController.xib in Resources */,
 				184E96671780C78E00EF30C9 /* Feedbin.iconset in Resources */,
@@ -221,22 +213,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		188477BB1780581900FAA58D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				188477BC1780581900FAA58D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		188477C11780581900FAA58D /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				188477C21780581900FAA58D /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
 		188477C71780581900FAA58D /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
