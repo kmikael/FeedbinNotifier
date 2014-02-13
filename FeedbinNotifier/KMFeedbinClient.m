@@ -8,12 +8,6 @@
 
 #import "KMFeedbinClient.h"
 
-@interface KMFeedbinClient ()
-
-@property (strong, nonatomic) NSURLCredential *credential;
-
-@end
-
 @implementation KMFeedbinClient
 
 - (id)initWithCredential:(NSURLCredential *)credential;
@@ -33,15 +27,15 @@
     URLComponents.password = self.credential.password;
     NSURL *URL = [URLComponents URL];
     
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:URL]
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
-    {
-        if (data && !error) {
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (data) {
             NSArray *entries = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
             completionHandler(entries, error);
         } else {
-            NSLog(@"Error: %@", [error localizedDescription]);
+            completionHandler(nil, error);
         }
     }];
 }

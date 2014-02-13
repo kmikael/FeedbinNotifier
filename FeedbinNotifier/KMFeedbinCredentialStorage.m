@@ -10,12 +10,12 @@
 
 @implementation KMFeedbinCredentialStorage
 
-+ (KMFeedbinCredentialStorage *)sharedCredentialStorage
++ (instancetype)sharedCredentialStorage
 {
-    static KMFeedbinCredentialStorage *sharedCredentialStorage;
+    static id sharedCredentialStorage;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedCredentialStorage = [[KMFeedbinCredentialStorage alloc] init];
+        sharedCredentialStorage = [[self alloc] init];
     });
     return sharedCredentialStorage;
 }

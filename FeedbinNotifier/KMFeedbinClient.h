@@ -10,6 +10,8 @@
 
 @interface KMFeedbinClient : NSObject
 
+@property (nonatomic, readonly) NSURLCredential *credential;
+
 - (id)initWithCredential:(NSURLCredential *)credential;
 
 // GET /v2/unread_entries.json
