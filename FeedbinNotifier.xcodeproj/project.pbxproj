@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		184E96671780C78E00EF30C9 /* Feedbin.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 184E96661780C78E00EF30C9 /* Feedbin.iconset */; };
 		1859104B1780816B00A974FA /* KMLogInWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185910491780816B00A974FA /* KMLogInWindowController.m */; };
-		1859104C1780816B00A974FA /* KMLogInWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1859104A1780816B00A974FA /* KMLogInWindowController.xib */; };
 		1859104F1780888C00A974FA /* KMFeedbinClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859104E1780888C00A974FA /* KMFeedbinClient.m */; };
 		185910521780A45E00A974FA /* KMFeedbinCredentialStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 185910511780A45E00A974FA /* KMFeedbinCredentialStorage.m */; };
 		185910591780AFD700A974FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185910571780AFB700A974FA /* Security.framework */; };
@@ -17,17 +15,13 @@
 		188477BF1780581900FAA58D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477BE1780581900FAA58D /* main.m */; };
 		188477C61780581900FAA58D /* KMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477C51780581900FAA58D /* KMAppDelegate.m */; };
 		188477C91780581900FAA58D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188477C71780581900FAA58D /* MainMenu.xib */; };
-		189358311780E67E00337E8B /* feedbin-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893582F1780E67E00337E8B /* feedbin-logo.png */; };
-		189358321780E67E00337E8B /* feedbin-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189358301780E67E00337E8B /* feedbin-logo@2x.png */; };
-		189358351780E6D900337E8B /* feedbin-logo-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 189358331780E6D900337E8B /* feedbin-logo-alt.png */; };
-		189358361780E6D900337E8B /* feedbin-logo-alt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189358341780E6D900337E8B /* feedbin-logo-alt@2x.png */; };
+		64F2E1C318ACE46A00052EFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F2E1C218ACE46A00052EFD /* Images.xcassets */; };
+		64F2E1C418ACE95A00052EFD /* KMLogInWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2E1C618ACE95A00052EFD /* KMLogInWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		184E96661780C78E00EF30C9 /* Feedbin.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = Feedbin.iconset; sourceTree = "<group>"; };
 		185910481780816B00A974FA /* KMLogInWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLogInWindowController.h; sourceTree = "<group>"; };
 		185910491780816B00A974FA /* KMLogInWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLogInWindowController.m; sourceTree = "<group>"; };
-		1859104A1780816B00A974FA /* KMLogInWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMLogInWindowController.xib; sourceTree = "<group>"; };
 		1859104D1780888C00A974FA /* KMFeedbinClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFeedbinClient.h; sourceTree = "<group>"; };
 		1859104E1780888C00A974FA /* KMFeedbinClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMFeedbinClient.m; sourceTree = "<group>"; };
 		185910501780A45E00A974FA /* KMFeedbinCredentialStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFeedbinCredentialStorage.h; sourceTree = "<group>"; };
@@ -44,10 +38,8 @@
 		188477C41780581900FAA58D /* KMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMAppDelegate.h; sourceTree = "<group>"; };
 		188477C51780581900FAA58D /* KMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMAppDelegate.m; sourceTree = "<group>"; };
 		188477C81780581900FAA58D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		1893582F1780E67E00337E8B /* feedbin-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedbin-logo.png"; sourceTree = "<group>"; };
-		189358301780E67E00337E8B /* feedbin-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedbin-logo@2x.png"; sourceTree = "<group>"; };
-		189358331780E6D900337E8B /* feedbin-logo-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedbin-logo-alt.png"; sourceTree = "<group>"; };
-		189358341780E6D900337E8B /* feedbin-logo-alt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedbin-logo-alt@2x.png"; sourceTree = "<group>"; };
+		64F2E1C218ACE46A00052EFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		64F2E1C518ACE95A00052EFD /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/KMLogInWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +100,12 @@
 				188477C71780581900FAA58D /* MainMenu.xib */,
 				185910481780816B00A974FA /* KMLogInWindowController.h */,
 				185910491780816B00A974FA /* KMLogInWindowController.m */,
-				1859104A1780816B00A974FA /* KMLogInWindowController.xib */,
+				64F2E1C618ACE95A00052EFD /* KMLogInWindowController.xib */,
 				1859104D1780888C00A974FA /* KMFeedbinClient.h */,
 				1859104E1780888C00A974FA /* KMFeedbinClient.m */,
 				185910501780A45E00A974FA /* KMFeedbinCredentialStorage.h */,
 				185910511780A45E00A974FA /* KMFeedbinCredentialStorage.m */,
+				64F2E1C218ACE46A00052EFD /* Images.xcassets */,
 				188477B91780581900FAA58D /* Supporting Files */,
 			);
 			path = FeedbinNotifier;
@@ -124,11 +117,6 @@
 				188477BE1780581900FAA58D /* main.m */,
 				188477C01780581900FAA58D /* FeedbinNotifier-Prefix.pch */,
 				188477BA1780581900FAA58D /* FeedbinNotifier-Info.plist */,
-				184E96661780C78E00EF30C9 /* Feedbin.iconset */,
-				1893582F1780E67E00337E8B /* feedbin-logo.png */,
-				189358301780E67E00337E8B /* feedbin-logo@2x.png */,
-				189358331780E6D900337E8B /* feedbin-logo-alt.png */,
-				189358341780E6D900337E8B /* feedbin-logo-alt@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -186,12 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				188477C91780581900FAA58D /* MainMenu.xib in Resources */,
-				1859104C1780816B00A974FA /* KMLogInWindowController.xib in Resources */,
-				184E96671780C78E00EF30C9 /* Feedbin.iconset in Resources */,
-				189358311780E67E00337E8B /* feedbin-logo.png in Resources */,
-				189358321780E67E00337E8B /* feedbin-logo@2x.png in Resources */,
-				189358351780E6D900337E8B /* feedbin-logo-alt.png in Resources */,
-				189358361780E6D900337E8B /* feedbin-logo-alt@2x.png in Resources */,
+				64F2E1C318ACE46A00052EFD /* Images.xcassets in Resources */,
+				64F2E1C418ACE95A00052EFD /* KMLogInWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +203,14 @@
 				188477C81780581900FAA58D /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		64F2E1C618ACE95A00052EFD /* KMLogInWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64F2E1C518ACE95A00052EFD /* en */,
+			);
+			name = KMLogInWindowController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -251,7 +243,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -278,7 +270,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -286,12 +278,16 @@
 		188477CD1780581900FAA58D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FeedbinNotifier/FeedbinNotifier-Prefix.pch";
 				INFOPLIST_FILE = "FeedbinNotifier/FeedbinNotifier-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -299,12 +295,16 @@
 		188477CE1780581900FAA58D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FeedbinNotifier/FeedbinNotifier-Prefix.pch";
 				INFOPLIST_FILE = "FeedbinNotifier/FeedbinNotifier-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
