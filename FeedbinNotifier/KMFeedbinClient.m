@@ -27,10 +27,12 @@
 
 - (void)getUnreadEntriesWithCompletionHandler:(void (^)(NSArray *, NSError *))completionHandler
 {
-    NSString *user = [self URLEncodedString:self.credential.user];
-    NSString *password = [self URLEncodedString:self.credential.password];
-    NSString *string = [NSString stringWithFormat:@"https://%@:%@@api.feedbin.me/v2/unread_entries.json", user, password];
-    NSURL *URL = [NSURL URLWithString:string];
+    NSURLComponents *URLComponents = [NSURLComponents componentsWithString:@"https://api.feedbin.me"];
+    URLComponents.path = @"/v2/unread_entries.json";
+    URLComponents.user = self.credential.user;
+    URLComponents.password = self.credential.password;
+    NSURL *URL = [URLComponents URL];
+    
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:URL]
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
@@ -42,14 +44,6 @@
             NSLog(@"Error: %@", [error localizedDescription]);
         }
     }];
-}
-
-#pragma mark - Helper methods
-
-- (NSString *)URLEncodedString:(NSString *)string
-{
-    CFStringRef l = CFSTR("!*'\"();:@&=+$,/?%#[]% ");
-    return CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)string, NULL, l, kCFStringEncodingUTF8));
 }
 
 @end
