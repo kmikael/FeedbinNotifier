@@ -78,7 +78,7 @@
 
 - (void)openFeedbin:(id)sender
 {
-    NSURL *URL = [NSURL URLWithString:@"https://feedbin.me"];
+    NSURL *URL = [NSURL URLWithString:@"https://feedbin.com"];
     [[NSWorkspace sharedWorkspace] openURL:URL];
 }
 

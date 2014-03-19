@@ -21,7 +21,7 @@
 
 - (void)getUnreadEntriesWithCompletionHandler:(void (^)(NSArray *, NSError *))completionHandler
 {
-    NSURLComponents *URLComponents = [NSURLComponents componentsWithString:@"https://api.feedbin.me"];
+    NSURLComponents *URLComponents = [NSURLComponents componentsWithString:@"https://api.feedbin.com"];
     URLComponents.path = @"/v2/unread_entries.json";
     URLComponents.user = self.credential.user;
     URLComponents.password = self.credential.password;
