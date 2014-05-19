@@ -150,6 +150,11 @@
 				CLASSPREFIX = KM;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Mikael Konutgan";
+				TargetAttributes = {
+					188477AE1780581900FAA58D = {
+						DevelopmentTeam = B3964473LQ;
+					};
+				};
 			};
 			buildConfigurationList = 188477AA1780581900FAA58D /* Build configuration list for PBXProject "FeedbinNotifier" */;
 			compatibilityVersion = "Xcode 3.2";
