@@ -20,4 +20,4 @@ You can also refresh from the menu manually at any time.
 You can build Feedbin Notifier with Xcode 5.1.1 on OS X 10.9.
 
 A code-signed binary is also available in the release section.
-[Download it now](https://github.com/kmikael/FeedbinNotifier/releases/v1.0.1/1896/feedbinnotifier.zip).
+[Download it now](https://github.com/kmikael/FeedbinNotifier/releases/download/v1.0.4/FeedbinNotifier.zip).
