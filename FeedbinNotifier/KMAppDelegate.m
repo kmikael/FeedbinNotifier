@@ -38,6 +38,7 @@
     _statusItem.image = [NSImage imageNamed:@"StatusItem-Image"];
     _statusItem.alternateImage = [NSImage imageNamed:@"StatusItem-AlternateImage"];
     _statusItem.highlightMode = YES;
+    
     [self setupMenu];
 }
 
@@ -46,13 +47,16 @@
     NSMenu *menu = [[NSMenu alloc] init];
     [menu addItemWithTitle:@"Open Feedbin" action:@selector(openFeedbin:) keyEquivalent:@""];
     [menu addItemWithTitle:@"Refresh" action:@selector(getUnreadEntries:) keyEquivalent:@""];
+    
     if ([[[KMFeedbinCredentialStorage sharedCredentialStorage] credential] hasPassword]) {
         [menu addItemWithTitle:@"Log Out" action:@selector(logOut:) keyEquivalent:@""];
     } else {
         [menu addItemWithTitle:@"Log In" action:@selector(logIn:) keyEquivalent:@""];
     }
+    
     [menu addItem:[NSMenuItem separatorItem]];
     [menu addItemWithTitle:@"Quit Feedbin Notifier" action:@selector(terminate:) keyEquivalent:@""];
+    
     self.statusItem.menu = menu;
 }
 
@@ -65,8 +69,7 @@
             _feedbinClient = [[KMFeedbinClient alloc] initWithCredential:credential];
         }
         
-        [self.feedbinClient getUnreadEntriesWithCompletionHandler:^(NSArray *entries, NSError *error)
-        {
+        [self.feedbinClient getUnreadEntriesWithCompletionHandler:^(NSArray *entries, NSError *error) {
             self.statusItem.title = [NSString stringWithFormat:@"%lu", entries.count];
         }];
     } else {
@@ -87,11 +90,13 @@
     if (!_logInWindowController) {
         _logInWindowController = [[KMLogInWindowController alloc] init];
     }
+    
     [self.logInWindowController showWindowWithCompletionHandler:^(NSURLCredential *credential){
         [[KMFeedbinCredentialStorage sharedCredentialStorage] setCredential:credential];
         [self getUnreadEntries:self];
         [self setupMenu];
     }];
+    
     [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 

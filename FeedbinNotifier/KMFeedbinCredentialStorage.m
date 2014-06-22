@@ -30,12 +30,15 @@
         (id)kSecAttrAccount: user ? user : @"",
         (id)kSecReturnData: @YES,
     };
+    
     CFTypeRef result;
     SecItemCopyMatching((__bridge CFDictionaryRef)query, &result);
     NSString *password = [[NSString alloc] initWithData:(__bridge_transfer NSData *)result encoding:NSUTF8StringEncoding];
+    
     if (![password length]) {
         password = nil;
     }
+    
     return [NSURLCredential credentialWithUser:user password:password persistence:NSURLCredentialPersistenceNone];
 }
 
@@ -49,6 +52,7 @@
         (id)kSecAttrAccount: credential.user,
         (id)kSecValueData: [credential.password dataUsingEncoding:NSUTF8StringEncoding]
     };
+    
     SecItemAdd((__bridge CFDictionaryRef)query, NULL);
 }
 
@@ -62,6 +66,7 @@
         (id)kSecAttrService: @"Feedbin",
         (id)kSecAttrAccount: user ? user : @""
     };
+    
     SecItemDelete((__bridge CFDictionaryRef)query);
 }
 
