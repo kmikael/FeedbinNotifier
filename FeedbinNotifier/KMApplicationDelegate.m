@@ -72,7 +72,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
     KMFeedbinClient *feedbinClient = [[KMFeedbinClient alloc] initWithCredential:credential];
     
     [feedbinClient getUnreadEntriesWithCompletionHandler:^(NSArray *entries, NSError *error) {
-        NSNumber *number = [NSNumber numberWithUnsignedInteger:entries.count];
+        NSNumber *number = entries ? [NSNumber numberWithUnsignedInteger:entries.count] : nil;
         NSString *title = [NSNumberFormatter localizedStringFromNumber:number numberStyle:NSNumberFormatterDecimalStyle];
         
         // Work around bug where setting the title only once will cause a layout issue
