@@ -28,7 +28,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{KMFeedbinRefreshInterval: @120.0}];
     
     [self setupStatusItem];
-    [self getUnreadEntries:nil];
+    [self getUnreadEntries:[NSApplication sharedApplication]];
     
     NSTimeInterval timeInterval = [[NSUserDefaults standardUserDefaults] doubleForKey:KMFeedbinRefreshInterval];
     [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(getUnreadEntries:) userInfo:nil repeats:YES];
