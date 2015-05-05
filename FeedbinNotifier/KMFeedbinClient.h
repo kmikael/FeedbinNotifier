@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Mikael Konutgan. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import ForceFeedback;
 
 @interface KMFeedbinClient : NSObject
 
 @property (nonatomic, readonly) NSURLCredential *credential;
 
-- (id)initWithCredential:(NSURLCredential *)credential;
+- (instancetype)initWithCredential:(NSURLCredential *)credential NS_DESIGNATED_INITIALIZER;
 
 // GET /v2/unread_entries.json
 - (void)getUnreadEntriesWithCompletionHandler:(void (^)(NSArray *entries, NSError *error))completionHandler;

@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Mikael Konutgan. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 
 @interface KMAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (strong, nonatomic) NSStatusItem *statusItem;
+@property (nonatomic, strong) NSStatusItem *statusItem;
 
 @end

@@ -10,15 +10,15 @@
 
 @interface KMLogInWindowController ()
 
-@property (copy, nonatomic) void (^completionHandler)(NSURLCredential *credential);
-@property (weak, nonatomic) IBOutlet NSTextField *emailTextField;
-@property (weak, nonatomic) IBOutlet NSSecureTextField *passwordTextField;
+@property (nonatomic, strong) void (^completionHandler)(NSURLCredential *credential);
+@property (nonatomic, strong) IBOutlet NSTextField *emailTextField;
+@property (nonatomic, strong) IBOutlet NSSecureTextField *passwordTextField;
 
 @end
 
 @implementation KMLogInWindowController
 
-- (id)init
+- (instancetype)init
 {
     return [self initWithWindowNibName:@"KMLogInWindowController" owner:self];
 }

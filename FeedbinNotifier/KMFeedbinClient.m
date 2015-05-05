@@ -10,7 +10,7 @@
 
 @implementation KMFeedbinClient
 
-- (id)initWithCredential:(NSURLCredential *)credential;
+- (instancetype)initWithCredential:(NSURLCredential *)credential;
 {
     self = [super init];
     if (self) {

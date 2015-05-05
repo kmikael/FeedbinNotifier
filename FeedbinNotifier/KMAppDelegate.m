@@ -13,8 +13,8 @@
 
 @interface KMAppDelegate ()
 
-@property (strong, nonatomic) KMLogInWindowController *logInWindowController;
-@property (strong, nonatomic) KMFeedbinClient *feedbinClient;
+@property (nonatomic, strong) KMLogInWindowController *logInWindowController;
+@property (nonatomic, strong) KMFeedbinClient *feedbinClient;
 
 @end
 
