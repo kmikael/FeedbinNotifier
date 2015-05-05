@@ -18,7 +18,6 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 @property (nonatomic, strong, readwrite) NSStatusItem *statusItem;
 
 @property (nonatomic, strong) KMLogInWindowController *logInWindowController;
-@property (nonatomic, strong) KMFeedbinClient *feedbinClient;
 
 @end
 
@@ -71,11 +70,9 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
         return;
     }
     
-    if (!self.feedbinClient) {
-        self.feedbinClient = [[KMFeedbinClient alloc] initWithCredential:credential];
-    }
+    KMFeedbinClient *feedbinClient = [[KMFeedbinClient alloc] initWithCredential:credential];
     
-    [self.feedbinClient getUnreadEntriesWithCompletionHandler:^(NSArray *entries, NSError *error) {
+    [feedbinClient getUnreadEntriesWithCompletionHandler:^(NSArray *entries, NSError *error) {
         NSNumber *number = [NSNumber numberWithUnsignedInteger:entries.count];
         NSString *title = [NSNumberFormatter localizedStringFromNumber:number numberStyle:NSNumberFormatterDecimalStyle];
         
