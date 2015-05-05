@@ -79,6 +79,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
         NSNumber *number = [NSNumber numberWithUnsignedInteger:entries.count];
         NSString *title = [NSNumberFormatter localizedStringFromNumber:number numberStyle:NSNumberFormatterDecimalStyle];
         
+        // Work around bug where setting the title only once will cause a layout issue
         self.statusItem.title = title;
         self.statusItem.title = title;
     }];
