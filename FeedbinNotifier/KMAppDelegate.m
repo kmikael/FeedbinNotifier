@@ -11,6 +11,8 @@
 #import "KMFeedbinClient.h"
 #import "KMFeedbinCredentialStorage.h"
 
+NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
+
 @interface KMAppDelegate ()
 
 @property (nonatomic, strong) KMLogInWindowController *logInWindowController;
@@ -27,8 +29,8 @@
     [self setupStatusItem];
     [self getUnreadEntries:nil];
     
-    NSTimeInterval ti = [[NSUserDefaults standardUserDefaults] doubleForKey:@"KMFeedbinRefreshInterval"];
-    [NSTimer scheduledTimerWithTimeInterval:ti target:self selector:@selector(getUnreadEntries:) userInfo:nil repeats:YES];
+    NSTimeInterval timeInterval = [[NSUserDefaults standardUserDefaults] doubleForKey:KMFeedbinRefreshInterval];
+    [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(getUnreadEntries:) userInfo:nil repeats:YES];
 }
 
 - (void)setupStatusItem
@@ -62,6 +64,9 @@
 
 - (void)getUnreadEntries:(id)sender
 {
+    self.statusItem.title = [NSString stringWithFormat:@"%u", (unsigned int)arc4random_uniform(100)];
+    return;
+    
     NSURLCredential *credential = [[KMFeedbinCredentialStorage sharedCredentialStorage] credential];
     
     if (credential.hasPassword) {
