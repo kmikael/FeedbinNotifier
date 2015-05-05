@@ -11,7 +11,8 @@
 @interface KMLogInWindowController ()
 
 @property (nonatomic, strong) void (^completionHandler)(NSURLCredential *credential);
-@property (nonatomic, strong) IBOutlet NSTextField *emailTextField;
+
+@property (nonatomic, strong) IBOutlet NSTextField *userTextField;
 @property (nonatomic, strong) IBOutlet NSSecureTextField *passwordTextField;
 
 @end
@@ -26,16 +27,24 @@
 - (void)showWindowWithCompletionHandler:(void (^)(NSURLCredential *))completionHandler
 {
     [self showWindow:nil];
+    
+    [self.userTextField becomeFirstResponder];
+    
     self.completionHandler = completionHandler;
 }
 
 - (IBAction)logIn:(id)sender
 {
-    if (self.completionHandler) {
-        NSURLCredential *credential = [NSURLCredential credentialWithUser:self.emailTextField.stringValue password:self.passwordTextField.stringValue persistence:NSURLCredentialPersistenceNone];
-        self.completionHandler(credential);
-        [self close];
-    }
+    NSString *user = self.userTextField.stringValue;
+    NSString *password = self.passwordTextField.stringValue;
+    NSURLCredential *credential = [NSURLCredential credentialWithUser:user password:password persistence:NSURLCredentialPersistenceNone];
+    
+    self.completionHandler(credential);
+    
+    self.userTextField.stringValue = @"";
+    self.passwordTextField.stringValue = @"";
+    
+    [self close];
 }
 
 @end
