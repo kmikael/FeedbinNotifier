@@ -11,7 +11,7 @@
 		1859104F1780888C00A974FA /* KMFeedbinClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859104E1780888C00A974FA /* KMFeedbinClient.m */; };
 		185910521780A45E00A974FA /* KMFeedbinCredentialStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 185910511780A45E00A974FA /* KMFeedbinCredentialStorage.m */; };
 		188477BF1780581900FAA58D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477BE1780581900FAA58D /* main.m */; };
-		188477C61780581900FAA58D /* KMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477C51780581900FAA58D /* KMAppDelegate.m */; };
+		188477C61780581900FAA58D /* KMApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188477C51780581900FAA58D /* KMApplicationDelegate.m */; };
 		188477C91780581900FAA58D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188477C71780581900FAA58D /* MainMenu.xib */; };
 		64F2E1C318ACE46A00052EFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F2E1C218ACE46A00052EFD /* Images.xcassets */; };
 		64F2E1C418ACE95A00052EFD /* KMLogInWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2E1C618ACE95A00052EFD /* KMLogInWindowController.xib */; };
@@ -28,8 +28,8 @@
 		188477BA1780581900FAA58D /* FeedbinNotifier-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeedbinNotifier-Info.plist"; sourceTree = "<group>"; };
 		188477BE1780581900FAA58D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		188477C01780581900FAA58D /* FeedbinNotifier-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FeedbinNotifier-Prefix.pch"; sourceTree = "<group>"; };
-		188477C41780581900FAA58D /* KMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMAppDelegate.h; sourceTree = "<group>"; };
-		188477C51780581900FAA58D /* KMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMAppDelegate.m; sourceTree = "<group>"; };
+		188477C41780581900FAA58D /* KMApplicationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMApplicationDelegate.h; sourceTree = "<group>"; };
+		188477C51780581900FAA58D /* KMApplicationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMApplicationDelegate.m; sourceTree = "<group>"; };
 		188477C81780581900FAA58D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		64F2E1C218ACE46A00052EFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		64F2E1C518ACE95A00052EFD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KMLogInWindowController.xib; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 		188477B81780581900FAA58D /* FeedbinNotifier */ = {
 			isa = PBXGroup;
 			children = (
-				188477C41780581900FAA58D /* KMAppDelegate.h */,
-				188477C51780581900FAA58D /* KMAppDelegate.m */,
+				188477C41780581900FAA58D /* KMApplicationDelegate.h */,
+				188477C51780581900FAA58D /* KMApplicationDelegate.m */,
 				188477C71780581900FAA58D /* MainMenu.xib */,
 				185910481780816B00A974FA /* KMLogInWindowController.h */,
 				185910491780816B00A974FA /* KMLogInWindowController.m */,
@@ -162,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				188477BF1780581900FAA58D /* main.m in Sources */,
-				188477C61780581900FAA58D /* KMAppDelegate.m in Sources */,
+				188477C61780581900FAA58D /* KMApplicationDelegate.m in Sources */,
 				1859104B1780816B00A974FA /* KMLogInWindowController.m in Sources */,
 				1859104F1780888C00A974FA /* KMFeedbinClient.m in Sources */,
 				185910521780A45E00A974FA /* KMFeedbinCredentialStorage.m in Sources */,

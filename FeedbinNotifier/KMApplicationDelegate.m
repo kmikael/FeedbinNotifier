@@ -1,19 +1,19 @@
 //
-//  KMAppDelegate.m
+//  KMApplicationDelegate.m
 //  FeedbinNotifier
 //
 //  Created by Mikael Konutgan on 30/06/2013.
 //  Copyright (c) 2013 Mikael Konutgan. All rights reserved.
 //
 
-#import "KMAppDelegate.h"
+#import "KMApplicationDelegate.h"
 #import "KMLogInWindowController.h"
 #import "KMFeedbinClient.h"
 #import "KMFeedbinCredentialStorage.h"
 
 NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 
-@interface KMAppDelegate ()
+@interface KMApplicationDelegate ()
 
 @property (nonatomic, strong, readwrite) NSStatusItem *statusItem;
 
@@ -22,7 +22,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 
 @end
 
-@implementation KMAppDelegate
+@implementation KMApplicationDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {

@@ -1,5 +1,5 @@
 //
-//  KMAppDelegate.h
+//  KMApplicationDelegate.h
 //  FeedbinNotifier
 //
 //  Created by Mikael Konutgan on 30/06/2013.
@@ -8,7 +8,7 @@
 
 @import Cocoa;
 
-@interface KMAppDelegate : NSObject <NSApplicationDelegate>
+@interface KMApplicationDelegate : NSObject <NSApplicationDelegate>
 
 @property (nonatomic, readonly) NSStatusItem *statusItem;
 
