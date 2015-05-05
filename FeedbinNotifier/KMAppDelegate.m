@@ -24,7 +24,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 
 @implementation KMAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{KMFeedbinRefreshInterval: @120.0}];
     
@@ -38,14 +38,12 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 - (void)setupStatusItem
 {
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    self.statusItem.image = [NSImage imageNamed:@"StatusItem-Image"];
-    self.statusItem.alternateImage = [NSImage imageNamed:@"StatusItem-AlternateImage"];
-    self.statusItem.highlightMode = YES;
+    self.statusItem.button.image = [NSImage imageNamed:@"StatusItem-Image"];
     
-    [self setupMenu];
+    [self updateStatusItemMenu];
 }
 
-- (void)setupMenu
+- (void)updateStatusItemMenu
 {
     NSMenu *menu = [[NSMenu alloc] init];
     [menu addItemWithTitle:@"Open Feedbin" action:@selector(openFeedbin:) keyEquivalent:@""];
@@ -65,22 +63,25 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 
 - (void)getUnreadEntries:(id)sender
 {
-    self.statusItem.title = [NSString stringWithFormat:@"%u", (unsigned int)arc4random_uniform(100)];
-    return;
-    
     NSURLCredential *credential = [[KMFeedbinCredentialStorage sharedCredentialStorage] credential];
     
-    if (credential.hasPassword) {
-        if (!_feedbinClient) {
-            _feedbinClient = [[KMFeedbinClient alloc] initWithCredential:credential];
-        }
-        
-        [self.feedbinClient getUnreadEntriesWithCompletionHandler:^(NSArray *entries, NSError *error) {
-            self.statusItem.title = [NSString stringWithFormat:@"%lu", entries.count];
-        }];
-    } else {
+    if (!credential.hasPassword) {
         [self logIn:nil];
+        
+        return;
     }
+    
+    if (!self.feedbinClient) {
+        self.feedbinClient = [[KMFeedbinClient alloc] initWithCredential:credential];
+    }
+    
+    [self.feedbinClient getUnreadEntriesWithCompletionHandler:^(NSArray *entries, NSError *error) {
+        NSNumber *number = [NSNumber numberWithUnsignedInteger:arc4random_uniform(100)];
+        NSString *title = [NSNumberFormatter localizedStringFromNumber:number numberStyle:NSNumberFormatterDecimalStyle];
+        
+        self.statusItem.title = title;
+        self.statusItem.title = title;
+    }];
 }
 
 #pragma mark - Menu actions
@@ -100,7 +101,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
     [self.logInWindowController showWindowWithCompletionHandler:^(NSURLCredential *credential){
         [[KMFeedbinCredentialStorage sharedCredentialStorage] setCredential:credential];
         [self getUnreadEntries:self];
-        [self setupMenu];
+        [self updateStatusItemMenu];
     }];
     
     [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
@@ -109,13 +110,10 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 - (void)logOut:(id)sender
 {
     [[KMFeedbinCredentialStorage sharedCredentialStorage] removeCredential];
-    self.statusItem.title = @"";
-    [self setupMenu];
-}
-
-- (void)terminate:(id)sender
-{
-    [[NSApplication sharedApplication] terminate:self.statusItem.menu];
+    
+    self.statusItem.title = nil;
+    
+    [self updateStatusItemMenu];
 }
 
 @end
