@@ -10,6 +10,6 @@
 
 @interface KMAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (nonatomic, strong) NSStatusItem *statusItem;
+@property (nonatomic, readonly) NSStatusItem *statusItem;
 
 @end

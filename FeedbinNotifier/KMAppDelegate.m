@@ -15,6 +15,8 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 
 @interface KMAppDelegate ()
 
+@property (nonatomic, strong, readwrite) NSStatusItem *statusItem;
+
 @property (nonatomic, strong) KMLogInWindowController *logInWindowController;
 @property (nonatomic, strong) KMFeedbinClient *feedbinClient;
 
@@ -35,11 +37,10 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 
 - (void)setupStatusItem
 {
-    _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    _statusItem.title = @"";
-    _statusItem.image = [NSImage imageNamed:@"StatusItem-Image"];
-    _statusItem.alternateImage = [NSImage imageNamed:@"StatusItem-AlternateImage"];
-    _statusItem.highlightMode = YES;
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    self.statusItem.image = [NSImage imageNamed:@"StatusItem-Image"];
+    self.statusItem.alternateImage = [NSImage imageNamed:@"StatusItem-AlternateImage"];
+    self.statusItem.highlightMode = YES;
     
     [self setupMenu];
 }
