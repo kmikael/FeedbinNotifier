@@ -19,15 +19,20 @@
     return self;
 }
 
-- (void)getUnreadEntriesWithCompletionHandler:(void (^)(NSArray *, NSError *))completionHandler
+- (NSURL *)unreadEntriesURLWithUser:(NSString *)user password:(NSString *)password
 {
     NSURLComponents *URLComponents = [NSURLComponents componentsWithString:@"https://api.feedbin.com"];
     URLComponents.path = @"/v2/unread_entries.json";
-    URLComponents.user = self.credential.user;
-    URLComponents.password = self.credential.password;
-    NSURL *URL = [URLComponents URL];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    URLComponents.user = user;
+    URLComponents.password = password;
+    
+    return URLComponents.URL;
+}
+
+- (void)getUnreadEntriesWithCompletionHandler:(void (^)(NSArray *, NSError *))completionHandler
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:[self unreadEntriesURLWithUser:self.credential.user password:self.credential.password]];
     NSOperationQueue *queue = [NSOperationQueue mainQueue];
     
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
