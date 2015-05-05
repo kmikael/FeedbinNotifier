@@ -49,7 +49,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
     [menu addItemWithTitle:@"Open Feedbin" action:@selector(openFeedbin:) keyEquivalent:@""];
     [menu addItemWithTitle:@"Refresh" action:@selector(getUnreadEntries:) keyEquivalent:@""];
     
-    if ([[[KMFeedbinCredentialStorage sharedCredentialStorage] credential] hasPassword]) {
+    if ([[KMFeedbinCredentialStorage readCredential] hasPassword]) {
         [menu addItemWithTitle:@"Log Out" action:@selector(logOut:) keyEquivalent:@""];
     } else {
         [menu addItemWithTitle:@"Log In" action:@selector(logIn:) keyEquivalent:@""];
@@ -63,7 +63,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 
 - (void)getUnreadEntries:(id)sender
 {
-    NSURLCredential *credential = [[KMFeedbinCredentialStorage sharedCredentialStorage] credential];
+    NSURLCredential *credential = [KMFeedbinCredentialStorage readCredential];
     
     if (!credential.hasPassword) {
         [self logIn:nil];
@@ -100,7 +100,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
     }
     
     [self.logInWindowController showWindowWithCompletionHandler:^(NSURLCredential *credential){
-        [[KMFeedbinCredentialStorage sharedCredentialStorage] setCredential:credential];
+        [KMFeedbinCredentialStorage createCredential:credential];
         [self getUnreadEntries:self];
         [self updateStatusItemMenu];
     }];
@@ -110,7 +110,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
 
 - (void)logOut:(id)sender
 {
-    [[KMFeedbinCredentialStorage sharedCredentialStorage] removeCredential];
+    [KMFeedbinCredentialStorage deleteCredential];
     
     self.statusItem.title = nil;
     

@@ -8,47 +8,15 @@
 
 #import "KMFeedbinCredentialStorage.h"
 
+NSString * const KMFeedbinCredentialStorageService = @"Feedbin";
+
 @implementation KMFeedbinCredentialStorage
 
-+ (instancetype)sharedCredentialStorage
++ (void)createCredential:(NSURLCredential *)credential
 {
-    static id sharedCredentialStorage;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedCredentialStorage = [[self alloc] init];
-    });
-    return sharedCredentialStorage;
-}
-
-- (NSURLCredential *)credential
-{
-    NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"KMFeedbinUser"];
-    
     NSDictionary *query = @{
         (id)kSecClass: (id)kSecClassGenericPassword,
-        (id)kSecAttrService: @"Feedbin",
-        (id)kSecAttrAccount: user ? user : @"",
-        (id)kSecReturnData: @YES,
-    };
-    
-    CFTypeRef result;
-    SecItemCopyMatching((__bridge CFDictionaryRef)query, &result);
-    NSString *password = [[NSString alloc] initWithData:(__bridge_transfer NSData *)result encoding:NSUTF8StringEncoding];
-    
-    if (![password length]) {
-        password = nil;
-    }
-    
-    return [NSURLCredential credentialWithUser:user password:password persistence:NSURLCredentialPersistenceNone];
-}
-
-- (void)setCredential:(NSURLCredential *)credential
-{
-    [[NSUserDefaults standardUserDefaults] setObject:credential.user forKey:@"KMFeedbinUser"];
-    
-    NSDictionary *query = @{
-        (id)kSecClass: (id)kSecClassGenericPassword,
-        (id)kSecAttrService: @"Feedbin",
+        (id)kSecAttrService: KMFeedbinCredentialStorageService,
         (id)kSecAttrAccount: credential.user,
         (id)kSecValueData: [credential.password dataUsingEncoding:NSUTF8StringEncoding]
     };
@@ -56,15 +24,35 @@
     SecItemAdd((__bridge CFDictionaryRef)query, NULL);
 }
 
-- (void)removeCredential
++ (NSURLCredential *)readCredential
 {
-    NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"KMFeedbinUser"];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"KMFeedbinUser"];
-    
     NSDictionary *query = @{
         (id)kSecClass: (id)kSecClassGenericPassword,
-        (id)kSecAttrService: @"Feedbin",
-        (id)kSecAttrAccount: user ? user : @""
+        (id)kSecAttrService: KMFeedbinCredentialStorageService,
+        (id)kSecReturnData: @YES,
+        (id)kSecReturnAttributes: @YES
+    };
+    
+    CFTypeRef result;
+    SecItemCopyMatching((__bridge CFDictionaryRef)query, &result);
+    
+    NSDictionary *attributes = (__bridge NSDictionary *)result;
+    
+    NSString *user = attributes[(id)kSecAttrAccount];
+    NSString *password = [[NSString alloc] initWithData:attributes[(id)kSecValueData] encoding:NSUTF8StringEncoding];
+    
+    if (!password.length) {
+        password = nil;
+    }
+    
+    return [NSURLCredential credentialWithUser:user password:password persistence:NSURLCredentialPersistenceNone];
+}
+
++ (void)deleteCredential
+{
+    NSDictionary *query = @{
+        (id)kSecClass: (id)kSecClassGenericPassword,
+        (id)kSecAttrService: KMFeedbinCredentialStorageService,
     };
     
     SecItemDelete((__bridge CFDictionaryRef)query);
