@@ -76,7 +76,7 @@ NSString * const KMFeedbinRefreshInterval = @"KMFeedbinRefreshInterval";
     }
     
     [self.feedbinClient getUnreadEntriesWithCompletionHandler:^(NSArray *entries, NSError *error) {
-        NSNumber *number = [NSNumber numberWithUnsignedInteger:arc4random_uniform(100)];
+        NSNumber *number = [NSNumber numberWithUnsignedInteger:entries.count];
         NSString *title = [NSNumberFormatter localizedStringFromNumber:number numberStyle:NSNumberFormatterDecimalStyle];
         
         self.statusItem.title = title;
