@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Mikael Konutgan. All rights reserved.
 //
 
-@import ForceFeedback;
+@import Foundation;
 
 @interface KMFeedbinClient : NSObject
 

@@ -27,7 +27,6 @@
 		188477AF1780581900FAA58D /* FeedbinNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedbinNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188477BA1780581900FAA58D /* FeedbinNotifier-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeedbinNotifier-Info.plist"; sourceTree = "<group>"; };
 		188477BE1780581900FAA58D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		188477C01780581900FAA58D /* FeedbinNotifier-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FeedbinNotifier-Prefix.pch"; sourceTree = "<group>"; };
 		188477C41780581900FAA58D /* KMApplicationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMApplicationDelegate.h; sourceTree = "<group>"; };
 		188477C51780581900FAA58D /* KMApplicationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMApplicationDelegate.m; sourceTree = "<group>"; };
 		188477C81780581900FAA58D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -85,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				188477BE1780581900FAA58D /* main.m */,
-				188477C01780581900FAA58D /* FeedbinNotifier-Prefix.pch */,
 				188477BA1780581900FAA58D /* FeedbinNotifier-Info.plist */,
 			);
 			name = "Supporting Files";
@@ -255,8 +253,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FeedbinNotifier/FeedbinNotifier-Prefix.pch";
 				INFOPLIST_FILE = "FeedbinNotifier/FeedbinNotifier-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -271,8 +267,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FeedbinNotifier/FeedbinNotifier-Prefix.pch";
 				INFOPLIST_FILE = "FeedbinNotifier/FeedbinNotifier-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
